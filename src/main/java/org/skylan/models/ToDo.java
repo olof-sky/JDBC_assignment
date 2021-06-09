@@ -2,25 +2,39 @@ package org.skylan.models;
 import java.time.LocalDateTime;
 
 public class ToDo {
-    int assigneeId;
-    int done;
     int id;
-    LocalDateTime deadline;
-    String description;
     String title;
+    String description;
+    LocalDateTime deadline;
+    int done;
+    int assigneeId;
 
-    public ToDo(int assigneeId, int done, int id, LocalDateTime deadline, String description, String title) {
-        this.assigneeId = assigneeId;
-        this.done = done;
+    public ToDo(int id, String title, String description, LocalDateTime deadline, int done, int assigneeId) {
         this.id = id;
-        this.deadline = deadline;
-        this.description = description;
         this.title = title;
+        this.description = description;
+        this.deadline = deadline;
+        this.done = done;
+        this.assigneeId = assigneeId;
     }
 
-    public ToDo(int done, int id, LocalDateTime deadline, String description, String title) {
-        this(0, done, id, deadline, description, title);
+    public ToDo(int id, String title, String description, LocalDateTime deadline, int done) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.deadline = deadline;
+        this.done = done;
     }
+
+    public ToDo(String title, String description, LocalDateTime deadline, int done, int assigneeId) {
+        this(0, title, description, deadline, done, assigneeId);
+    }
+
+    public ToDo(String title, String description, LocalDateTime deadline, int done) {
+        this(0, title, description, deadline, done);
+    }
+
+
 
     public int getAssigneeId() {
         return assigneeId;

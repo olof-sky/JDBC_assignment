@@ -15,6 +15,7 @@ public class PeopleDaoImpl implements PeopleDAO {
         return DriverManager.getConnection(URL, USER, PASSWORD);
     }
 
+    @Override
     public Person create(Person person) {
         if(person == null) throw new IllegalArgumentException("Person was null");
         if(person.getId() != 0) throw new IllegalArgumentException("Person is already persisted");
@@ -63,7 +64,6 @@ public class PeopleDaoImpl implements PeopleDAO {
             connection = getConnection();
             statement = connection.createStatement();
             resultSet = statement.executeQuery("SELECT * FROM person");
-
             while (resultSet.next()){
                 Person person = new Person(
                         resultSet.getInt(1),

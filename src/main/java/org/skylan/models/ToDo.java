@@ -4,22 +4,22 @@ import java.time.LocalDateTime;
 public class ToDo {
     int assigneeId;
     int done;
-    int toDoId;
+    int id;
     LocalDateTime deadline;
     String description;
     String title;
 
-    public ToDo(int assigneeId, int done, int toDoId, LocalDateTime deadline, String description, String title) {
+    public ToDo(int assigneeId, int done, int id, LocalDateTime deadline, String description, String title) {
         this.assigneeId = assigneeId;
         this.done = done;
-        this.toDoId = toDoId;
+        this.id = id;
         this.deadline = deadline;
         this.description = description;
         this.title = title;
     }
 
-    public ToDo(int done, int toDoId, LocalDateTime deadline, String description, String title) {
-        this(0, done, toDoId, deadline, description, title);
+    public ToDo(int done, int id, LocalDateTime deadline, String description, String title) {
+        this(0, done, id, deadline, description, title);
     }
 
     public int getAssigneeId() {
@@ -38,12 +38,12 @@ public class ToDo {
         this.done = done;
     }
 
-    public int getToDoId() {
-        return toDoId;
+    public int getId() {
+        return id;
     }
 
-    public void setToDoId(int toDoId) {
-        this.toDoId = toDoId;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public LocalDateTime getDeadline() {
@@ -75,7 +75,7 @@ public class ToDo {
         return "ToDo{" +
                 "assigneeId=" + assigneeId +
                 ", done=" + done +
-                ", toDoId=" + toDoId +
+                ", id=" + id +
                 ", deadline=" + deadline +
                 ", description='" + description + '\'' +
                 ", title='" + title + '\'' +
